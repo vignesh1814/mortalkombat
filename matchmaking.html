@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mortal Kombat Tournament - Registration</title>
+    <title>Mortal Kombat Tournament - Matchmaking</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
 </head>
@@ -13,7 +13,7 @@
         <source src="https://www.soundboard.com/sb/mortal_kombat_theme" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
-    
+
     <!-- Music Control Button -->
     <div class="music-control" id="musicToggle" title="Toggle Music">
         <img src="https://i.imgur.com/JGI9AxS.png" alt="Music" width="30" height="30">
@@ -27,22 +27,6 @@
         <!-- Blood Splatter Background -->
         <div class="blood-splatter"></div>
 
-        <!-- Registration Form -->
-        <div class="registration-form">
-            <h2>Register Participant</h2>
-            <input type="text" id="participantName" placeholder="Participant Name">
-            <input type="text" id="participantPhone" placeholder="Phone Number">
-            <button class="mk-button" onclick="registerParticipant()">Register</button>
-        </div>
-
-        <!-- Check-In Participants -->
-        <div class="check-in-section">
-            <h2>Check-In Participants</h2>
-            <select id="registeredParticipants"></select>
-            <button class="mk-button" onclick="checkInParticipant()">Check-In</button>
-            <button class="mk-button" onclick="dropCheckedInParticipant()">Drop Checked-In</button>
-        </div>
-
         <!-- View Checked-In Participants -->
         <div class="checked-in-section">
             <h2>Checked-In Participants</h2>
@@ -50,19 +34,32 @@
             <div id="checkedInContainer" class="participants-list"></div>
         </div>
 
-        <!-- Team Formation -->
-        <div class="team-formation">
-            <h2>Form Teams</h2>
-            <input type="number" id="teamSize" placeholder="Team Size" min="2">
-            <button class="mk-button" onclick="formTeams()">Form Teams</button>
-            <div id="teamsContainer"></div>
+        <!-- Matchmaking Section -->
+        <div class="matchmaking-section">
+            <h2>Random Matchmaking</h2>
+            <p>Generate random matches from checked-in participants</p>
+            <button class="mk-button" onclick="randomMatchmaking()">Generate Matches</button>
         </div>
 
-        <!-- Navigation to Matchmaking Page -->
+        <!-- Update Results Section -->
+        <div class="update-results-section">
+            <h2>Update Match Results</h2>
+            <input type="text" id="matchId" placeholder="Match ID">
+            <input type="text" id="winner" placeholder="Winner Name">
+            <button class="mk-button" onclick="updateResult()">Update Result</button>
+        </div>
+
+        <!-- Tournament Bracket -->
+        <div class="tournament-bracket">
+            <h2>Tournament Bracket</h2>
+            <div id="tree"></div>
+        </div>
+
+        <!-- Navigation back to Registration -->
         <div class="navigation">
-            <button class="mk-button" onclick="window.location.href='matchmaking.html'">Go to Matchmaking</button>
+            <button class="mk-button" onclick="window.location.href='index.html'">Back to Registration</button>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="matchmaking.js"></script>
 </body>
 </html>
