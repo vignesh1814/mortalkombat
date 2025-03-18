@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortal Kombat Tournament - Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mortal+Kombat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://www.soundboard.com/sb/mortal_kombat_theme" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <header>
+        <h1>Mortal Kombat Tournament</h1>
+        <img src="https://i.ibb.co/CpCmx2CY/mortal-kombat-logo.png" alt="Mortal Kombat Logo" class="logo">
+    </header>
+    <div class="container">
+        <!-- Blood Splatter Background -->
+        <div class="blood-splatter"></div>
+
+        <!-- Registration Form -->
+        <div class="registration-form">
+            <h2>Register Participant</h2>
+            <input type="text" id="participantName" placeholder="Participant Name">
+            <input type="text" id="participantPhone" placeholder="Phone Number">
+            <button class="mk-button" onclick="registerParticipant()">Register</button>
+        </div>
+
+        <!-- Check-In Participants -->
+        <div class="check-in-section">
+            <h2>Check-In Participants</h2>
+            <select id="registeredParticipants"></select>
+            <button class="mk-button" onclick="checkInParticipant()">Check-In</button>
+            <button class="mk-button" onclick="dropCheckedInParticipant()">Drop Checked-In</button>
+        </div>
+
+        <!-- Team Formation -->
+        <div class="team-formation">
+            <h2>Form Teams</h2>
+            <input type="number" id="teamSize" placeholder="Team Size" min="2">
+            <button class="mk-button" onclick="formTeams()">Form Teams</button>
+            <div id="teamsContainer"></div>
+        </div>
+
+        <!-- Navigation to Matchmaking Page -->
+        <div class="navigation">
+            <button class="mk-button" onclick="window.location.href='matchmaking.html'">Go to Matchmaking</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
